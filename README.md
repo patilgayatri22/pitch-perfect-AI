@@ -1,21 +1,6 @@
-# Pitch-Perfect: AI-Powered Cricket Shot Analysis
+# Pitch-Perfect: Cricket Shot Analysis with AI
 
 A full-stack application for real-time cricket shot classification and form quality assessment using deep learning. The system analyzes cricket batting videos to detect shot types and evaluate form quality with confidence scoring.
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Technology Stack](#technology-stack)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Running the Application](#running-the-application)
-- [API Documentation](#api-documentation)
-- [Project Structure](#project-structure)
-- [Model Information](#model-information)
-- [Development](#development)
-- [Contributing](#contributing)
 
 ## Overview
 
@@ -103,15 +88,6 @@ The application follows a client-server architecture with clear separation of co
 - **Memory**: Minimum 8GB RAM (16GB recommended for model inference)
 - **Storage**: At least 5GB free space for dependencies and models
 
-### Model Files
-
-The application requires trained model files in the `backend/models/` directory:
-
-- `cricvision_v2_multitask_tf.keras` (primary model, ~29MB)
-- `cricvision_v2_multitask.keras` (alternative model, ~85MB)
-- `cnn_bilstm_binary_classifier.keras` (fallback model, ~19MB)
-
-**Note**: Model files are not included in the repository. Ensure model files are placed in the `backend/models/` directory before running the application.
 
 ## Installation
 
@@ -384,25 +360,6 @@ The model uses a multitask learning architecture:
 - **Frontend**: Use ESLint and Prettier configurations
 - **TypeScript**: Enable strict mode for type safety
 
-### Testing
-
-Run linting and type checking:
-
-**Frontend:**
-```bash
-cd frontend
-npm run lint
-```
-
-**Backend:**
-```bash
-cd backend
-pylint app.py utils/*.py
-```
-
-### Environment Variables
-
-Never commit `.env` files. Use `.env.example` files for documentation if needed.
 
 ### Git Workflow
 
@@ -419,24 +376,6 @@ Never commit `.env` files. Use `.env.example` files for documentation if needed.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-### Development Guidelines
-
-- Follow the existing code structure and patterns
-- Write clear, self-documenting code
-- Add comments for complex logic
-- Update documentation for new features
-- Ensure backward compatibility when possible
-
-## License
-
-[Specify your license here]
-
-## Acknowledgments
-
-- TensorFlow and Keras teams for deep learning frameworks
-- FastAPI for the modern Python web framework
-- React team for the frontend framework
-- All contributors and testers
 
 ---
 
