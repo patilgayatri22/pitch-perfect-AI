@@ -1,0 +1,11 @@
+fastapi==0.121.1
+uvicorn==0.38.0
+tensorflow==2.19.0
+keras==3.10.0
+opencv-python==4.12.0.88
+numpy==2.0.2
+pydantic>=2.12.0
+python-multipart==0.0.6
+elevenlabs==0.2.27
+python-dotenv==1.0.0
+

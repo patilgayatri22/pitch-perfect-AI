@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Aeonik font faces - ensure files exist at public/assets/fonts/ */
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/assets/fonts/Aeonik-Regular.woff2') format('woff2'),
+       url('/assets/fonts/Aeonik-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/assets/fonts/Aeonik-Bold.woff2') format('woff2'),
+       url('/assets/fonts/Aeonik-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    @apply bg-cv-bg text-cv-text antialiased;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-attachment: fixed;
+  }
+
+  #root {
+    min-height: 100vh;
+    width: 100%;
+  }
+}
+
+@layer components {
+  /* Heading defaults */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium text-cv-text;
+  }
+
+  .card-glass {
+    background: theme(colors.cv-card);
+    border: 1px solid theme(colors.cv-border);
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+  }
+
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(17, 24, 39, 0.08);
+    border-color: theme(colors.cv-border);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F4F6;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #111827, #374151);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0F172A, #1F2937);
+}
+
+/* Loading indicator animation */
+@keyframes stroke-fill {
+  from {
+    stroke-dashoffset: 326;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.stroke-progress {
+  stroke-dasharray: 326;
+  stroke-dashoffset: 326;
+  animation: stroke-fill 5s ease-out forwards;
+  transition: stroke-dashoffset 0.1s ease-out;
+}
+
